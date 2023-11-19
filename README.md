@@ -8,9 +8,8 @@
 
 <div style="text-align: left">
     <p>
-        <a href="https://www.jetbrains.com/es-es/idea/" target="_blank"> <img alt="IntelliJ Idea" src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/intellij/intellij-original.svg" height="60" width = "60"></a>
-        <a href="https://www.java.com/es/" target="_blank"> <img alt="Java" src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/java/java-original.svg" height="60" width = "60"></a>
-        <a href="https://spring.io" target="_blank"> <img alt="Spring" src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/spring/spring-original.svg" height="60" width = "60"></a>
+        <a href="https://code.visualstudio.com" target="_blank"> <img alt="V" src="https://raw.githubusercontent.com/devicons/devicon/55609aa5bd817ff167afce0d965585c92040787a/icons/vscode/vscode-original.svg" height="60" width = "60"></a>
+        <a href="https://es.wikipedia.org/wiki/Bash" target="_blank"> <img alt="Bash" src="https://raw.githubusercontent.com/devicons/devicon/55609aa5bd817ff167afce0d965585c92040787a/icons/bash/bash-original.svg" height="60" width = "60"></a>
     </p>
 </div>
 
