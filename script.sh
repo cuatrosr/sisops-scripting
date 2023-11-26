@@ -15,32 +15,32 @@ while true; do
     case $opcion in
     1)
         # Menú de gestión de usuarios
-        sh modules/users.sh
+        sh modules/users/users.sh
         ;;
     2)
         # Menú de gestión de departamentos
-        sh modules/departments.sh
+        sh modules/departments/departments.sh
         ;;
     3)
         # Menú de asignación y desasignación de usuarios a departamentos
-        sh modules/asosiations.sh
+        sh modules/asociations/asociations.sh
         ;;
     4)
         # Menú de gestión de logs
-        sh modules/logs.sh
+        sh modules/logs/logs.sh
         ;;
     5)
         # Menú de gestión de actividades en el sistema
-        sh modules/activities.sh
+        sh modules/activities/activities.sh
         ;;
     6)
         # Menú de gestión del sistema
-        sh modules/system.sh
+        sh modules/system/system.sh
         ;;
     0)
         # Finalizar Script
         echo "Saliendo..."
-        exit 0
+        break
         ;;
     *)
         # Opción no valida
