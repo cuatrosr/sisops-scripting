@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 # Menú principal
 while true; do
     echo "1. Gestión de usuarios"
