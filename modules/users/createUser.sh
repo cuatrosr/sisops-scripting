@@ -6,9 +6,6 @@ read -p "Ingrese el nombre completo del usuario: " full_name
 # Crear el usuario
 sudo useradd -m -c "$full_name" "$username"
 
-# Crear directorio de correo para evitar advertencia al momento de deshabilitar
-sudo touch /var/mail/"$username"
-
 # Asignarle una contraseña
 
 while true; do
@@ -32,9 +29,6 @@ while true; do
        if echo "$chpasswd_output" | grep -q "CONTRASEÑA INCORRECTA"; then
 
           echo "Intentalo de nuevo, $chpasswd_output "
-        
-          # Eliminar el usuario
-          sudo userdel -r -f "$username"
 
        else
 
