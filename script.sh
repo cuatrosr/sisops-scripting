@@ -3,6 +3,9 @@
 
 # Menú principal
 while true; do
+    echo
+    echo "Bienvenido, ¡Gestiona tu empresa!"
+    echo
     echo "1. Gestión de usuarios"
     echo "2. Gestión de departamentos"
     echo "3. Gestión de asosiaciones"
@@ -12,6 +15,7 @@ while true; do
     echo "0. Salir"
 
     read -r -p "Seleccione una opción: " opcion
+    echo
 
     case $opcion in
     1)
