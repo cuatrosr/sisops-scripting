@@ -3,11 +3,8 @@
 # Función para verificar la existencia de un usuario
 check_user_existence() {
     local username=$1
-    if id "$username" 2>/dev/null; then
-        return 0 # El usuario existe
-    else
-        return 1 # El usuario no existe
-    fi
+    id "$username" >/dev/null 2>"$1"
+    return $?
 }
 
 echo "Historial de comandos de un usuario"
@@ -16,7 +13,7 @@ echo "Historial de comandos de un usuario"
 read -r -p "Ingrese el nombre de usuario: " nombre_usuario
 
 # Verificar si el usuario existe
-if id "$username" >/dev/null 2>"$1"; then
+if check_user_existence "$nombre_usuario"; then
     less "/home/$nombre_usuario/.bash_history"
 else
     echo "El usuario $username no existe."

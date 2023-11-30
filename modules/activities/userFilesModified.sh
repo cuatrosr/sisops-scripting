@@ -3,11 +3,8 @@
 # Función para verificar la existencia de un usuario
 check_user_existence() {
     local username=$1
-    if id "$username" 2>/dev/null; then
-        return 0 # El usuario existe
-    else
-        return 1 # El usuario no existe
-    fi
+    id "$username" >/dev/null 2>"$1"
+    return $?
 }
 
 echo "Archivos modificados por el usuario"
