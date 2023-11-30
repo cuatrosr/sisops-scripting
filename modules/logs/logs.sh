@@ -14,13 +14,28 @@ while true; do
 
     case $opcion in
     1)
-        sh modules/logs/authFailure.sh
+        echo "Inicios de sesion fallidos"
+        echo
+
+        awk '/authentication failure/ {printf "Fecha: %s, Intento de autenticacion de parte del %s hacia el %s\n", $1, $7, $13}' /var/log/auth.log
+        echo
         ;;
+
     2)
         sh modules/logs/passwordChanged.sh
         ;;
     3)
-        sh modules/logs/openedSessions.sh
+        echo "Numero de veces que el usuario inicio sesion"
+        echo
+        read -p "Ingrese el nombre del usuario: " username
+        count=$(awk -v user="$username" '$0 ~ user && /session opened/ {count++} END {print count}' /var/log/auth.log)
+
+        if [ $count -gt 0 ]; then
+            echo "El usuario $username ha tenido $count sesiones abiertas."
+            echo
+        else
+            echo "No se encontraron sesiones abiertas para el usuario $username."
+        fi
         ;;
         
     4)
