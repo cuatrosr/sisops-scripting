@@ -16,9 +16,9 @@ read -r -p "Ingrese la ruta del directorio: " ruta_directorio
 read -r -p "Ingrese el nombre de usuario: " nombre_usuario
 
 # Verificar si el usuario existe
-if check_user_existence "$username"; then
+if check_user_existence "$nombre_usuario"; then
     find "$ruta_directorio" -type f -user "$nombre_usuario" -exec stat --format='%U %y %n' {} \; 2>/dev/null
 
 else
-    echo "El usuario $username no existe."
+    echo "El usuario $nombre_usuario no existe."
 fi

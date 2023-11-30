@@ -16,5 +16,5 @@ read -r -p "Ingrese el nombre de usuario: " nombre_usuario
 if check_user_existence "$nombre_usuario"; then
     less "/home/$nombre_usuario/.bash_history"
 else
-    echo "El usuario $username no existe."
+    echo "El usuario $nombre_usuario no existe."
 fi

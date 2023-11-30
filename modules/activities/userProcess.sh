@@ -12,8 +12,8 @@ echo "Cantidad de procesos de un usuario"
 # Solictar nombre del usuario
 read -r -p "Ingrese el nombre de usuario: " nombre_usuario
 
-if check_user_existence "$username"; then
+if check_user_existence "$nombre_usuario"; then
     ps -e -o user= | sort | uniq -c | awk '{print "Usuario:", $2, "Cantidad de procesos:", $1}' | grep "$nombre_usuario"
 else
-    echo "El usuario $username no existe."
+    echo "El usuario $nombre_usuario no existe."
 fi
