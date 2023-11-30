@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Límite de uso de CPU permitido (%)
-LIMIT=50
+limit_info=$(grep -i "cpu" limit.txt)
+LIMIT=$(echo "$limit_info" | awk -F":" '$1 == cpu {print $3; exit}')
 
 echo "Monitoreo de uso de la CPU con un limite de $LIMIT por usuario"
 echo

@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Límite de memoria permitido en KB
-LIMIT=1000000
+limit_info=$(grep -i "memory" limit.txt)
+LIMIT=$(echo "$limit_info" | awk -F":" '$1 == memory {print $3; exit}')
 
 echo "Monitoreo de uso de memoria con un limite de $LIMIT KB por usuario"
 echo

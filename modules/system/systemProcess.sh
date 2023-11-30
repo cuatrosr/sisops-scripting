@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Límite de procesos permitidos
-LIMIT=50
+limit_info=$(grep -i "process" limit.txt)
+LIMIT=$(echo "$limit_info" | awk -F":" '$1 == process {print $3; exit}')
 
 echo "Monitoreo de procesos activos con un limite de $LIMIT por usuario"
 echo
