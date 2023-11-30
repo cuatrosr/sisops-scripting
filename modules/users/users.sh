@@ -21,9 +21,9 @@ while true; do
         sh modules/users/updateUser.sh
         ;;
     0)
-    	echo "Volviendo al menú principal..."
+        echo "Volviendo al menú principal..."
         break
-	;;
+        ;;
     *)
         echo "Opción no válida"
         ;;

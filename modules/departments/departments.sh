@@ -22,9 +22,9 @@ while true; do
         sh modules/departments/updateDepartment.sh
         ;;
     0)
-    	echo "Volviendo al menú principal..."
+        echo "Volviendo al menú principal..."
         break
-	;;
+        ;;
     *)
         echo "Opción no válida"
         ;;

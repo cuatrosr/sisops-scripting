@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Deshabilitar grupo"
-read -p "Ingrese el nombre del grupo: " group_name
+read -r -p "Ingrese el nombre del grupo: " group_name
 
 group_info=$(grep -i "| $group_name |" departmentsBD.txt)
 

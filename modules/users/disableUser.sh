@@ -3,7 +3,7 @@
 echo "Deshabilitando un usuario"
 
 # Solicitar el nombre de usuario
-read -p "Ingrese el nombre de usuario: " username
+read -r -p "Ingrese el nombre de usuario: " username
 
 # Buscar y obtener la info del usuario de la BD
 user_info=$(grep -i "| $username |" usersBD.txt)

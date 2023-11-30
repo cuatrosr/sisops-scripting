@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 # Menú principal
 while true; do
     echo
