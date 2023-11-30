@@ -8,8 +8,7 @@ read -p "Ingrese el nombre del grupo: " group_name
 # BUsca el grupo en el sistema
 isInSystem=$(grep -c "$group_name" /etc/group)
 
-if [ $isInSystem -eq 0 ]
-then 
+if [ $isInSystem -eq 0 ]; then 
 	sudo groupadd "$group_name"
 	gid=$(getent group "$group_name" | awk -F: '{print $3}')
 	echo "Grupo creado exitosamente: $group_name"
