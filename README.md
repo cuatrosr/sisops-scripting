@@ -1,10 +1,29 @@
-# ***Menu Scripting*** 💻️
+# **_Menu Scripting_** 💻️
 
 <p style="text-align: justify">
-    <i>Description...</i>
+¡Bienvenido al sistema de gestión empresarial! Este script Bash proporciona una interfaz de línea de comandos para facilitar la administración de diversas funciones dentro de tu empresa. Con un enfoque en la simplicidad y la eficiencia, este script abarca las siguientes áreas clave:
 </p>
 
-## ***Build With*** 🛠️
+1. **Gestión de Usuarios:**
+    - Añadir y eliminar usuarios.
+    - Gestionar asociaciones y permisos.
+2. **Gestión de Departamentos:**
+    - Agregar y eliminar departamentos.
+    - Actualizar el estado de los departamentos (activo/inactivo).
+3. **Gestión de Asociaciones:**
+    - Administrar relaciones y asociaciones entre usuarios y departamentos.
+4. **Gestión de Logs:**
+    - Mantener un registro detallado de las acciones realizadas en el sistema.
+    - Facilitar la auditoría y el seguimiento de cambios.
+5. **Gestión de Actividades en el Sistema:**
+    - Supervisar y registrar las actividades críticas.
+    - Generar informes sobre el uso del sistema.
+6. **Gestión del Sistema:**
+    - Ofrecer funciones generales de mantenimiento y configuración del sistema.
+
+</p>
+
+## **_Build With_** 🛠️
 
 <div style="text-align: left">
     <p>
@@ -13,28 +32,28 @@
     </p>
 </div>
 
-## ***Versioned*** 📌
+## **_Versioned_** 📌
 
 <div style="text-align: left">
     <a href="https://git-scm.com/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/git/git-original.svg" height="60" width = "60" alt="Git"></a>
     <a href="https://github.com/" target="_blank"> <img src="https://img.icons8.com/fluency-systems-filled/344/ffffff/github.png" height="60" width = "60" alt="GitHub"></a>
 </div>
 
-## ***Local Deploy*** 📦
+## **_Local Deploy_** 📦
 
-*To run the script you should follow these steps:*
+_To run the script you should follow these steps:_
 
-1️⃣ *Clone or download the repository*
+1️⃣ _Clone or download the repository_
 
-2️⃣ *Open a Command Line Interface (CLI)*
+2️⃣ _Right click on script.sh, select properties and enable "execute as program"_
 
-3️⃣ *Run the following command:*
+3️⃣ _Open a Command Line Interface (CLI) And Run the following command:_
 
 ```bash
 sh script.sh
 ```
 
-## ***Authors*** ✒️
+## **_Authors_** ✒️
 
 <div style="text-align: left">
     <a href="https://github.com/cuatrosr" target="_blank"> <img alt="cuatrosr" src="https://images.weserv.nl/?url=avatars.githubusercontent.com/u/70908378?v=4&h=60&w=60&fit=cover&mask=circle"></a>
@@ -44,5 +63,6 @@ sh script.sh
 </div>
 
 ---
+
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/for-you.svg)](https://forthebadge.com)
