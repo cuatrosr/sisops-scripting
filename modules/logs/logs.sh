@@ -22,15 +22,16 @@ while true; do
         ;;
 
     2)
+        echo "Cambios de contraseña realizados"
         grep "password changed" /var/log/auth.log | \
         sed -E 's/^([0-9]{4}-[0-9]{2}-[0-9]{2})T([0-9]{2}:[0-9]{2}:[0-9]{2}).*password changed for ([a-zA-Z0-9_-]+).*/Fecha: \1\nHora: \2\nMensaje: password changed for \3\n/' | \
         sed 's/T/ /'
         echo
         ;;
     3)
-        echo "Numero de veces que el usuario inicio sesion"
+        echo "Numero de veces que un determinado usuario inicio sesion"
         echo
-        read -p "Ingrese el nombre del usuario: " username
+        read -r -p "Ingrese el nombre del usuario: " username
         count=$(awk -v user="$username" '$0 ~ user && /session opened/ {count++} END {print count}' /var/log/auth.log)
 
         if [ $count -gt 0 ]; then
@@ -42,10 +43,11 @@ while true; do
         ;;
         
     4)
+        echo "Numero de veces que un determinado usuario cerro sesion"
         read -r -p "Ingrese el nombre del usuario: " user_name
         count=$(grep -c "session closed for user $user_name" /var/log/auth.log)
         echo "El usuario $user_name ha cerrado sesión $count veces."
-
+        echo
         ;;
     0)
     	echo "Volviendo al menú principal..."
