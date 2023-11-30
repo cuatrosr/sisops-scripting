@@ -1,7 +1,6 @@
 #!/bin/bash
 
 while true; do
-    clear
     echo "Menú de Administración"
     echo "1. Mostrar archivos modificados por un usuario"
     echo "2. Ver historial de comandos de un usuario"
