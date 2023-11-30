@@ -4,6 +4,7 @@
 LIMIT=1000000
 
 echo "Monitoreo de uso de memoria con un limite de $LIMIT KB por usuario"
+echo
 
 # Obtener una lista de todos los usuarios únicos que tienen procesos
 USERS=$(ps hax -o user | sort | uniq)
@@ -18,3 +19,4 @@ for USER in $USERS; do
 done
 
 echo "Monitoreo terminado"
+echo

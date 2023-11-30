@@ -4,6 +4,7 @@
 LIMIT=50
 
 echo "Monitoreo de procesos activos con un limite de $LIMIT por usuario"
+echo
 
 # Obtener una lista de todos los usuarios únicos que tienen procesos
 USERS=$(ps hax -o user | sort | uniq)
@@ -18,3 +19,4 @@ for USER in $USERS; do
 done
 
 echo "Monitoreo terminado"
+echo

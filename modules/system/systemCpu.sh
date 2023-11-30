@@ -4,6 +4,7 @@
 LIMIT=50
 
 echo "Monitoreo de uso de la CPU con un limite de $LIMIT por usuario"
+echo
 
 # Obtener una lista de todos los usuarios únicos que tienen procesos
 USERS=$(ps hax -o user | sort | uniq)
@@ -19,3 +20,6 @@ for USER in $USERS; do
         echo "Alerta: El usuario $USER está utilizando $CPU_USAGE% de CPU, superando el límite de $LIMIT%."
     fi
 done
+
+echo "Monitoreo terminado"
+echo

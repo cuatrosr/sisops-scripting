@@ -14,6 +14,7 @@ read -r -p "Ingrese la ruta del directorio: " ruta_directorio
 
 # Solictar nombre del usuario
 read -r -p "Ingrese el nombre de usuario: " nombre_usuario
+echo
 
 # Verificar si el usuario existe
 if check_user_existence "$nombre_usuario"; then
@@ -22,3 +23,5 @@ if check_user_existence "$nombre_usuario"; then
 else
     echo "El usuario $nombre_usuario no existe."
 fi
+
+echo
