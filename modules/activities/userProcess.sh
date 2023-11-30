@@ -10,14 +10,13 @@ check_user_existence() {
     fi
 }
 
-echo "Cierres de sesion de un usuario"
+echo "Cantidad de procesos de un usuario"
 
 # Solictar nombre del usuario
 read -r -p "Ingrese el nombre de usuario: " nombre_usuario
 
-# Verificar si el usuario existe
 if check_user_existence "$username"; then
-    journalctl | grep "session closed" | grep "$nombre_usuario"
+    ps -e -o user= | sort | uniq -c | awk '{print "Usuario:", $2, "Cantidad de procesos:", $1}' | grep "$nombre_usuario"
 else
     echo "El usuario $username no existe."
 fi
