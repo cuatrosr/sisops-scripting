@@ -16,7 +16,7 @@ echo "Historial de comandos de un usuario"
 read -r -p "Ingrese el nombre de usuario: " nombre_usuario
 
 # Verificar si el usuario existe
-if check_user_existence "$username"; then
+if id "$username" >/dev/null 2>"$1"; then
     less "/home/$nombre_usuario/.bash_history"
 else
     echo "El usuario $username no existe."
