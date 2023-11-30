@@ -23,4 +23,5 @@ if [ -n "$user_info" ]; then
     echo
 else
     echo "El usuario $username no fue encontrado en la BD, inténtalo de nuevo."
+    echo
 fi
