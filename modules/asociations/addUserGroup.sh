@@ -17,12 +17,14 @@ if check_user_existence "$nombre_usuario"; then
     # Verificar si el grupo existe
     if grep -q "^$groupname:" /etc/group; then
         # Añadir usuario al grupo
-        sudo usermod -aG "$groupname" "$username"
-        echo "El usuario $username ha sido añadido al grupo $groupname."
-        echo "$nombre_usuario:$groupname" >>asociations.txt
+        sudo usermod -aG "$groupname" "$nombre_usuario"
+        echo "El usuario $nombre_usuario ha sido añadido al grupo $groupname."
+        echo "$nombre_usuario:$groupname:ACTIVE" >>asociations.txt
     else
         echo "El grupo $groupname no existe."
     fi
 else
     echo "El usuario $nombre_usuario no existe."
 fi
+
+echo

@@ -9,20 +9,22 @@ check_user_existence() {
 
 echo "Eliminar usuario de un grupo"
 
-read -r -p "Introduce el nombre del usuario: " username
+read -r -p "Introduce el nombre del usuario: " nombre_usuario
 read -r -p "Introduce el nombre del grupo del que quieres eliminar al usuario: " groupname
 
 # Verificar si el usuario existe
-if check_user_existence "$username"; then
+if check_user_existence "$nombre_usuario"; then
     # Verificar si el grupo existe
     if grep -q "^$groupname:" /etc/group; then
         # Eliminar usuario del grupo
-        sudo deluser "$username" "$groupname"
-        echo "El usuario $username ha sido eliminado del grupo $groupname."
-        sed -i "/$username:$groupname/d" 'asociations.txt'
+        sudo deluser "$nombre_usuario" "$groupname"
+        echo "El usuario $nombre_usuario ha sido eliminado del grupo $groupname."
+        sed -i "s/$nombre_usuario:$groupname:ACTIVE/$nombre_usuario:$groupname:INACTIVE/g" 'asociations.txt'
     else
         echo "El grupo $groupname no existe."
     fi
 else
-    echo "El usuario $username no existe."
+    echo "El usuario $nombre_usuario no existe."
 fi
+
+echo
