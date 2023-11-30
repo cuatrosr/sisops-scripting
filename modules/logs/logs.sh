@@ -2,10 +2,10 @@
 
 while true; do
     echo "Gestion de Logs"
-    echo "1. Ver los inicios de sesion fallidos"
-    echo "2. Ver los cambios de contraseña realizados"
-    echo "3. Numero de veces que el usuario inicio sesion"
-    echo "4. Numero de veces que el usuario cerro sesion"
+    echo "1. Ver todos los inicios de sesion fallidos"
+    echo "2. Ver todos los cambios de contraseña realizados"
+    echo "3. Numero de veces que un determinado usuario inicio sesion"
+    echo "4. Numero de veces que un determinado usuario cerro sesion"
     
     echo "0. Regresar al menú principal"
 
@@ -22,7 +22,10 @@ while true; do
         ;;
 
     2)
-        sh modules/logs/passwordChanged.sh
+        grep "password changed" /var/log/auth.log | \
+        sed -E 's/^([0-9]{4}-[0-9]{2}-[0-9]{2})T([0-9]{2}:[0-9]{2}:[0-9]{2}).*password changed for ([a-zA-Z0-9_-]+).*/Fecha: \1\nHora: \2\nMensaje: password changed for \3\n/' | \
+        sed 's/T/ /'
+        echo
         ;;
     3)
         echo "Numero de veces que el usuario inicio sesion"
@@ -39,7 +42,10 @@ while true; do
         ;;
         
     4)
-        sh modules/logs/closedSessions.sh
+        read -r -p "Ingrese el nombre del usuario: " user_name
+        count=$(grep -c "session closed for user $user_name" /var/log/auth.log)
+        echo "El usuario $user_name ha cerrado sesión $count veces."
+
         ;;
     0)
     	echo "Volviendo al menú principal..."
