@@ -1,0 +1,3 @@
+cpu:70
+memory:1500000
+process:10
